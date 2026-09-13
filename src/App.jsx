@@ -8,6 +8,14 @@ import {
 
 /* ---------------------------------- THEME ---------------------------------- */
 
+const DREAMY_BG =
+  "radial-gradient(at 15% 20%, #F7C6D9 0%, transparent 55%), " +
+  "radial-gradient(at 85% 10%, #C9B6E4 0%, transparent 55%), " +
+  "radial-gradient(at 10% 85%, #BFEAD5 0%, transparent 55%), " +
+  "radial-gradient(at 85% 90%, #FCE8A8 0%, transparent 55%), " +
+  "radial-gradient(at 50% 50%, #E1F0FB 0%, transparent 60%), " +
+  "#FBF8FD";
+
 const C = {
   bg: "#FBF8FD",
   card: "#FFFFFF",
@@ -238,7 +246,8 @@ function LoginScreen({ onLogin }) {
     <div
       style={{
         minHeight: "100vh",
-        background: `radial-gradient(circle at 20% 20%, #F5EEFC 0%, ${C.bg} 55%)`,
+        background: DREAMY_BG,
+        backgroundAttachment: "fixed",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -372,7 +381,7 @@ function Onboarding({ userName, onDone }) {
   }
 
   return (
-    <div style={{ minHeight: "100vh", background: C.bg, display: "flex", alignItems: "center", justifyContent: "center", padding: 20, fontFamily: "'Nunito', sans-serif" }}>
+    <div style={{ minHeight: "100vh", background: DREAMY_BG, backgroundAttachment: "fixed", display: "flex", alignItems: "center", justifyContent: "center", padding: 20, fontFamily: "'Nunito', sans-serif" }}>
       <div style={{ width: "100%", maxWidth: 460 }}>
         <div style={{ display: "flex", gap: 6, marginBottom: 20, justifyContent: "center" }}>
           {[1, 2].map((n) => (
@@ -1356,7 +1365,7 @@ export default function Sparkly() {
   if (screen === "onboarding") return <Onboarding userName={userName} onDone={handleOnboardingDone} />;
 
   return (
-    <div style={{ minHeight: "100vh", background: C.bg, fontFamily: "'Nunito', sans-serif", display: "flex" }}>
+    <div style={{ minHeight: "100vh", background: DREAMY_BG, backgroundAttachment: "fixed", fontFamily: "'Nunito', sans-serif", display: "flex" }}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700;800&family=Nunito:wght@400;500;600;700;800&display=swap');
         * { font-family: 'Nunito', sans-serif; box-sizing: border-box; }
