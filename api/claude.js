@@ -23,6 +23,7 @@ export default async function handler(req, res) {
     });
 
     const data = await anthropicRes.json();
+       console.error("Anthropic error:", JSON.stringify(data));
 
     if (!anthropicRes.ok) {
       return res.status(anthropicRes.status).json({ error: data });
